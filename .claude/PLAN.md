@@ -25,6 +25,9 @@ Web app for Argentine importers: enter purchase orders + invoices → compute na
 | M9 | Reports | Import cost by product/date, pending and completed POs, spend by rubro/period, backorder drill-down, billing, supplier and customer balances. |
 | M10 | ARCA Billing | Takes confirmed sales invoices from M8 and formats them for electronic submission to ARCA. MVP: manual generation flow. Full automated integration (requires AFIP certificate) is post-MVP. |
 
+## Out of scope
+This plan covers the import use case only. The system should be designed with the awareness that an export workflow exists as a parallel use case — same entities (products, suppliers, invoices, cost engine) but different flow and tax logic. Export is not planned here but the architecture should not make it harder to add later.
+
 ## Key Risks
 - Each invoice line needs its own stored exchange rate
 - Antidumping has two modes (fixed × qty vs pct × CIF) — flagged per product
